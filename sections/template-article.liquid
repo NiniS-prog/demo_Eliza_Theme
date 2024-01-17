@@ -12,7 +12,7 @@
   </time>
 {% endif %}
 
-<img src="{{article.image | img_url: "medium" }}" alt="{{article.image.alt }}">
+<img src="{{ article.image | img_url: 'medium' }}" alt="{{ article.image.alt }}">
 <div class="">{{ article.content }}</div>
 
 {% schema %}
