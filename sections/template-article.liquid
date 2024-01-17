@@ -14,7 +14,6 @@
 
 <img src="{{ article.image | img_url: 'medium' }}" alt="{{ article.image.alt }}">
 <div class="">{{ article.content }}</div>
-
 {% schema %}
 {
   "name": "Template Article",
@@ -26,10 +25,33 @@
       "label": "Display Author Name"
     },
     {
-      "type": "checkbox", // Corrected from "time" to "type"
+      "type": "checkbox",
       "id": "enable_published_date",
       "default": true,
-      "label": "Display Published Date" // Corrected typo "Dispaly" to "Display"
+      "label": "Display Published Date"
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "article_title",
+      "name": "Title",
+      "limit": "1"
+    },
+    {
+      "type": "article_author",
+      "name": "Author",
+      "limit": 1
+    },
+    {
+      "type": "article_published_date",
+      "name": "Published Date",
+      "limit": 1
+    },
+    {
+      "type": "featured_image",
+      "name": "Thumbnail",
+      "limit": 1
     }
   ]
 }
