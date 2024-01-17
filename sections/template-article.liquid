@@ -7,3 +7,23 @@
 </time>
 <img src="{{article.image | img_url: "medium" }}" alt="{{article.image.alt }}">
 <div class="">{{ article.content }}</div>
+
+{% schema %}
+{
+  "name": "Template Article",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_author",
+      "default": true,
+      "label": "Display Author Name"
+    },
+    {
+      "type": "checkbox", // Corrected from "time" to "type"
+      "id": "enable_published_date",
+      "default": true,
+      "label": "Display Published Date" // Corrected typo "Dispaly" to "Display"
+    }
+  ]
+}
+{% endschema %}
