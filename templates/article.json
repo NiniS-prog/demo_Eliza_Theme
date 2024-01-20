@@ -2,13 +2,17 @@
   "sections": {
     "template": {
       "type": "template-article",
-      "settings": {
-        "enable_author": false,
-        "enable_published_date": true
-      }
+      "blocks": {
+        "title": {
+          "type": "article_title"
+        }
+      },
+      "block-order": ["title"]
     }
   },
-  "order": [
-    "template"
-  ]
+  "settings": {
+    "enable_author": false,
+    "enable_published_date": true
+  },
+  "order": ["template"]
 }
