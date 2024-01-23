@@ -8,8 +8,8 @@
           "settings": {
           }
         },
-        "thumbnail": {
-          "type": "featured_image",
+        "author": {
+          "type": "article_author",
           "settings": {
           }
         },
@@ -18,8 +18,8 @@
           "settings": {
           }
         },
-        "author": {
-          "type": "article_author",
+        "thumbnail": {
+          "type": "featured_image",
           "settings": {
           }
         },
@@ -31,9 +31,9 @@
       },
       "block_order": [
         "title",
-        "thumbnail",
-        "published_date",
         "author",
+        "published_date",
+        "thumbnail",
         "content"
       ],
       "settings": {
