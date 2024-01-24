@@ -1000,6 +1000,10 @@ video {
     height: 24rem;
   }
 
+  .md\:h-60 {
+    height: 15rem;
+  }
+
   .md\:flex-1 {
     flex: 1 1 0%;
   }
