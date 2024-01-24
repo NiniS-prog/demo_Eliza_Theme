@@ -32,7 +32,10 @@
         </div>
 
       {% when 'featured_image' %}
-        <img src="{{ article.image | img_url: 'large'}}" alt="{{ article.image.alt }}">
+        <div class="max-w-7xl bg-blue-100 rounded-lg mx-2 md:mx-auto overflow-hidden my-4">
+          {% if article.image != blank %}
+            <img src="{{ article.image | img_url: 'large'}}" alt="{{ article.image.alt }}">
+          {% endif %}
       {% when 'article_content' %}
         <div class="">{{ article.content }}</div>
       {% else %}
