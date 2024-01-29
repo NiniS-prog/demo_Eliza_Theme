@@ -158,7 +158,23 @@
     {% endform %}
   </div>
 {% endif %}
+<script>
+  {
+  "@context": "http://schema.org",
+  "@type":"BlogPosting",
+  "@headline":{{article.title | json }},
+  "articleBody":{{article.content |script_html | json }},
+  {%if article.excerpt !=blank %}
+  "discription":{{article_excerpt |strip_html |json }},
+  {%endif %}
+  {%if article.image%}|
+  "image": [
+    {{ article.image | img_url: "medium" |prepend: 'https:' | json}}
 
+  ],
+  {%endif %}
+  }
+</script>
 {% schema %}
 {
   "name": "Template Article",
