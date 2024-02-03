@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "sections": {
         "template": {
             "type": "template-cart"
@@ -6,3 +7,16 @@
     },
     "order": ["template"]
 }
+=======
+  "sections": {
+    "template": {
+      "type": "template-cart",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "template"
+  ]
+}
+>>>>>>> origin/main
