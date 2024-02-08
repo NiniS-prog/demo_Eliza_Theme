@@ -6,13 +6,12 @@
           <h1 class="text-3xl">Your cart</h1>
           <a
             href="{{ routes.all_products_collectiom_url }}"
-            class="text-blue-600 hover:text-blue-800 font-medium underline"
+            class="text-black hover:text-pink-600 font-medium underline"
             >Continue shopping</a
           >
         </div>
       </div>
     </div>
-
     <div class="max-w-6xl flex flex-col my-10 mx-auto">
       <form action="{{ routes.cart_url }}" method="POST" novalidate>
         <table class="table-auto divide-y divide-gray-200 my-4 w-full">
@@ -78,7 +77,7 @@
               <button
                 type="submit"
                 name="update"
-                class="w-full p-3 border border-gray-600 text-gray-600 font-medium hover:bg-gray-600 hover:text-white"
+                class="w-full p-3 border border-black text-black font-medium hover:bg-pink-300 hover:text-black"
               >
                 Update
               </button>
@@ -88,7 +87,7 @@
               <button
                 type="submit"
                 name="checkout"
-                class="w-full p-3 border border-gray-600 font-medium bg-gray-600 text-white"
+                class="w-full p-3 border border-black font-medium bg-pink-300 text-black"
               >
                 Checkout
               </button>
@@ -99,16 +98,16 @@
     </div>
   </div>
 {% else %}
-  <div class="max-w-6xl h-60 my-4 mx-auto flex flex-col items-center justify-center">
+  <div class="max-w-6xl h-60 my-4 mx-auto flex items-center justify-center">
     <div class="text-center">
-      <h1 class="text-3xl my-4">Your cart is empty</h1>
-
+      <h1 class="text-3xl my-4">Your Cart Is Empty</h1>
       <div class="my-4 py-4">
         <a
-          href="{{ routes.all_products_collection_url }}"
-          class="border border-gray-600 text-white bg-gray-600 px-8 py-3"
-          >Continue shopping</a
+          href="{{ routes.all_products_collectiom_url }}"
+          class="px-4 inline py-2 text-base font-medium shadow bg-pink-300 hover:bg-pink-600 text-black"
         >
+          Continue shopping
+        </a>
       </div>
     </div>
   </div>
