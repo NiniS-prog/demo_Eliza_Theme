@@ -16,14 +16,17 @@
       <form action="{{ routes.cart_url }}" method="POST" novalidate>
         <table class="table-auto divide-y divide-gray-200 my-4 w-full">
           <thead>
-            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500">Product</th>
-            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500">Quantity</th>
-            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500">Total Price</th>
+            <tr>
+              <th class="px-6 py-3 text-left text-sm font-medium text-gray-500">Product</th>
+              <th class="px-6 py-3 text-left text-sm font-medium text-gray-500">Quantity</th>
+              <th class="px-6 py-3 text-left text-sm font-medium text-gray-500">Total Price</th>
+              <th class="px-6 py-3 text-left text-sm font-medium text-gray-500">Remove</th>
+            </tr>
           </thead>
           <tbody>
             {% for item in cart.items %}
               <tr class="table-row">
-                <td class="py-4 px-2 flex flex-col justify-center">
+                <td class="py-4 px-2">
                   <a href="{{ item.url }}">
                     {% if item.image %}
                       <img
@@ -35,15 +38,12 @@
                       {{ 'product-1' | placeholder_svg_tag: 'w-20 h-20 object-cover border' }}
                     {% endif %}
                   </a>
-                </td>
-                <td class="py-4 px-2 flex flex-col justify-center">
-                  <a href="{{ item.url }}" class="my-1">{{ item.product.title | truncatewords: 5 }}</a>
-                  <span class="text-sm text-gray-500 my-1">{{ item.variant.title }}</span>
-                  <a
-                    href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0"
-                    class="text-sm font-medium text-red-500 my-1"
-                    >remove</a
-                  >
+                  <div class="mt-2">
+                    <a href="{{ item.url }}" class="text-black font-medium">
+                      {{- item.product.title | truncatewords: 5 -}}
+                    </a>
+                    <p class="text-sm text-gray-500">{{ item.variant.title }}</p>
+                  </div>
                 </td>
                 <td class="py-4 px-2">
                   <input
@@ -52,16 +52,22 @@
                     id="updates_{{ forloop.index }}"
                     value="{{ item.quantity }}"
                     min="0"
-                    class="w-20 border p-2"
+                    class="w-16 border p-2"
                   >
                 </td>
+                <td class="py-4 px-2">{{ item.line_price | money }}</td>
                 <td class="py-4 px-2">
-                  {{ item.line_price | money }}
+                  <a
+                    href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0"
+                    class="text-sm font-medium text-red-500"
+                    >Remove</a
+                  >
                 </td>
               </tr>
             {% endfor %}
           </tbody>
         </table>
+
         <div class="flex flex-col md:flex-row items-center justify-between">
           <div class="w-full my-4">
             <div class="flex flex-col items-start">
@@ -110,7 +116,7 @@
       <h1 class="text-3xl my-4">Your Cart Is Empty</h1>
       <div class="my-4 py-4">
         <a
-          href="{{ routes.all_products_collectiom_url }}"
+          href="{{ routes.all_products_collection_url }}"
           class="px-4 inline py-2 text-base font-medium shadow bg-pink-300 hover:bg-pink-600 text-black"
         >
           Continue shopping
