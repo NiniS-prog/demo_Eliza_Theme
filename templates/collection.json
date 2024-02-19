@@ -1,13 +1,11 @@
 {
   "sections": {
-    "template": {
-      "type": "template-collection",
-      "settings": {
-        "number_of_products_per_page": 6
+      "template": {
+          "type": "template-collection",
+          "settings":{
+            "featured.collection":"all"
+          }
       }
-    }
   },
-  "order": [
-    "template"
-  ]
+  "order": ["template"]
 }
