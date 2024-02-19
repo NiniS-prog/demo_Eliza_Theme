@@ -1,4 +1,5 @@
 {% for product in section.settings.featured_collection.products limit: section.settings.number_of_products_to_show %}
+  {% render 'product-card', product_product: product %}
 {% endfor %}
 
 {% schema %}
