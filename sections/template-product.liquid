@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
 {% assign selected_variant = product.selected_or_first_available_variant %}
 
 <style>
@@ -129,7 +130,7 @@
             type="submit"
             name="add"
             class="w-full px-6 py-4 bg-gray-900 text-white hover:bg-gray-700 rounded-sm my-2"
-            {% if product.selected_or_first_available_variant.available == false %}
+            {% if selected_variant.available == false %}
               disabled
             {% endif %}
           >
