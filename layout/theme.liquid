@@ -20,5 +20,8 @@
     <main role="main">
       {{ content_for_layout }}
     </main>
+    document.getElementById('VariantSelect').addEventListener('change', function () { var selectedVariant = this.value;
+    var newUrl = window.location.href.split('?')[0] + '?variant=' + selectedVariant; window.history.pushState({ path:
+    newUrl }, '', newUrl); });
   </body>
 </html>
