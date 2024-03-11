@@ -11,8 +11,7 @@
     <!-- Header hook for plugins -->
     {{ 'application.css' | asset_url | stylesheet_tag }}
     {{ 'application.js' | asset_url | script_tag }}
-
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
   </head>
   <body>
     {% section 'header' %}
@@ -20,8 +19,5 @@
     <main role="main">
       {{ content_for_layout }}
     </main>
-    document.getElementById('VariantSelect').addEventListener('change', function () { var selectedVariant = this.value;
-    var newUrl = window.location.href.split('?')[0] + '?variant=' + selectedVariant; window.history.pushState({ path:
-    newUrl }, '', newUrl); });
   </body>
 </html>
