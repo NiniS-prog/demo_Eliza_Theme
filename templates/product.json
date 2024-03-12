@@ -1,5 +1,6 @@
 {
   "sections": {
+<<<<<<< HEAD
       "template": {
           "type": "template-product",
           "blocks": {
@@ -20,6 +21,57 @@
               "description",
               "checkout_buttons"
           ]
+=======
+    "template": {
+      "type": "template-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "vendor": {
+          "type": "vendor",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "quantity": {
+          "type": "quantity",
+          "settings": {
+          }
+        },
+        "variant_selector": {
+          "type": "variant_selector",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "checkout_buttons": {
+          "type": "checkout_buttons",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "vendor",
+        "price",
+        "quantity",
+        "variant_selector",
+        "description",
+        "checkout_buttons"
+      ],
+      "settings": {
+>>>>>>> a8605c348135233fb9ff22267ffbd247b70429e7
       }
   },
   "order": ["template"]
