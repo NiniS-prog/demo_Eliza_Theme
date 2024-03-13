@@ -159,17 +159,18 @@
 </div>
 
 <script>
-  class variant-selector extends HTMLElement{
-  constractor(){
-  super:();
-  this.addEventListener("change", this.onVariantChange)
-  }
-  onVariantChange(){
-  consol.log("I have changed the varaint selector");
+  class VariantSelector extends HTMLElement {
+    constructor() {
+      super();
+      this.addEventListener('change', this.onVariantChange.bind(this));
+    }
 
+    onVariantChange() {
+      console.log('I have changed the variant selector');
+    }
   }
-  }
-  customElements.define{"variant-selector", variantSelector};
+
+  customElements.define('variant-selector', VariantSelector);
 </script>
 
 <script>
