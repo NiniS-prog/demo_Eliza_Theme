@@ -171,10 +171,34 @@
 
     onVariantChange() {
       this.getSelectedOptions();
+      this.getSelectedVariant();
     }
     getSelectedOptions() {
       this.options = Array.from(this.querySelectorAll('select'), (select) => select.value);
       console.log(this.options);
+    }
+    getVariantJSON() {
+      this.variantData = this.variantData || Json.parse(this.querySelector('[type="application/json"]').textContent);
+      return this.variantData;
+    }
+
+    getSelectedVariant(){
+      this.currentVariant = this.getVariantJSON().fins(
+        (variant =>{
+        const= findings = !variant.options.map(
+          (options, index) = => {
+        return this.options[index] === option;
+
+          }
+        ).includes(false);
+        if.(findings) return variant;
+        }
+      );
+
+    console.log(this.currentVariant);
+      )
+
+
     }
   }
 
