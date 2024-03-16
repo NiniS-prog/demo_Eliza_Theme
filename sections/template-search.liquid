@@ -1,0 +1,12 @@
+{% paginate search.results by 10 %}
+{% for item in search.results%}
+    {% if %}
+        {% case item.object_type %}
+            {% when 'product' %}
+                {% render 'product-card', product: item %}
+            {% else %}
+
+{% endcase %}
+
+{% endfor %}
+{% endpaginate %}
