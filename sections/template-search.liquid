@@ -15,14 +15,23 @@
       </form>
     </div>
 
-    {% for item in search.results %}
-      {% case item.object_type %}
-        {% when 'product' %}
-          {% render 'product-card', product_product: item %}
-        {% else %}
+    {% if search.performed %}
+      {% if search.results.size > 0 %}
+        {% for item in search.results %}
+          {% case item.object_type %}
+            {% when 'product' %}
+              {% render 'product-card', product_product: item %}
+            {% else %}
 
-      {% endcase %}
-    {% endfor %}
+          {% endcase %}
+        {% endfor %}
+      {% else %}
+        <div class="text-center my-4">
+          <p>No results found for the search term: {{ search.terms | escape }}. Try to use a different keyword</p>
+        </div>
+      {% endif %}
+    {% endif %}
+
     {% render 'pagination', pagination: paginate %}
   {% endpaginate %}
 </div>
