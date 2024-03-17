@@ -6,7 +6,7 @@
     <div class="my-8">
       {% form 'customer_login' %}
         {% if form.errors %}
-          <div class="relative border border-red-400 bg-red-100 text-red 700 px-4 py-3" role="alert">
+          <div class="relative border border-red-400 bg-red-100 text-red-700 px-4 py-3" role="alert">
             <strong class="font-bold">Error!</strong>
             <p class="block sm:inline">{{ form.errors | default_errors }}</p>
           </div>
@@ -26,25 +26,22 @@
           <div class="my-2">
             <label for="password" class="sr-only">Password</label>
             <input
-              type="email"
+              type="password"
               name="customer[password]"
               id="password"
               autocomplete="current-password"
               class="relative block w-full px-3 py-2 border"
-              placeholder="password"
+              placeholder="Password"
             >
           </div>
         {% endif %}
-        <div class="div">
-          <button
-            type="submit"
-            class="relative w-full py-2 px-4 text-sm font-medium text-white bg-gray-600 hover:bg-gray-900"
-          >
-            Sign in
-          </button>
-        </div>
+        <button
+          type="submit"
+          class="relative w-full py-2 px-4 text-sm font-medium text-white bg-gray-600 hover:bg-gray-900"
+        >
+          Sign in
+        </button>
       {% endform %}
     </div>
   </div>
-  <div class="max-w-md w-full space-y-8"></div>
 </div>
