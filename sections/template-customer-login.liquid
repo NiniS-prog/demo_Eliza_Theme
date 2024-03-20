@@ -56,6 +56,11 @@
         </div>
       {% endform %}
     </div>
+    {% if shop.checkout.guest__login %}
+      Guest checkout is allowd
+    {% else %}
+      Guest checkout is currently disabled
+    {% endif %}
   </div>
   <div x-show="pwRecoverForm" class="max-w-md w-full space-y-8">
     <div>
