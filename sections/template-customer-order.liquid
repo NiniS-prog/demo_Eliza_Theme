@@ -45,7 +45,9 @@
               </tbody>
             </table>
 
-            <div class="text-gray-500 mb-4"></div>
+            <div class="text-gray-500 mb-4">
+              {{ line_item.product.description | truncatewords: 15 }}
+            </div>
           </div>
         </div>
       </div>
