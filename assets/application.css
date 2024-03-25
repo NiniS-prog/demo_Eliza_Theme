@@ -849,6 +849,10 @@ video {
   height: 100vh;
 }
 
+.h-5 {
+  height: 1.25rem;
+}
+
 .min-h-80 {
   min-height: 20rem;
 }
@@ -888,6 +892,10 @@ video {
 .w-max {
   width: -moz-max-content;
   width: max-content;
+}
+
+.w-5 {
+  width: 1.25rem;
 }
 
 .max-w-2xl {
