@@ -91,6 +91,7 @@
             id="address_country_{{ form.id }}"
             value="{{ form.country }}"
             class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+            deta-country-selector
           >
             {{ all_country_option_tags }}
           </select>
@@ -168,16 +169,30 @@
     {% endpaginate %}
   </div>
 </div>
+
 <script>
-  class CustomerAddress {
-    constructor() {
-      this.initCustomerAddress();
-    }
+      class= CustomerAdress{
+      constractor(){
+        this.initCustomerAdresss(){
+       <script>
+      class CustomerAddress {
+        constructor() {
+          this.initCustomerAddress();
+        }
 
-    initCustomerAddress() {
-      console.log('hello test');
-    }
+        initCustomerAddress() {
+    const allAdressesSelector = document.querySelectorAll("Select[deta-country-selector]");
+    if(allAdressesSelector.length < 1) return;
+      console.log(allAdressesSelector);
   }
+      }
 
-  const customerAddress = new CustomerAddress();
+      const customerAddress = new CustomerAddress();
+    </script>
+
+        }
+      }
+      initCustomerAdresss
+      }
+      const=CustomerAdress=new CustomerAdress();
 </script>
