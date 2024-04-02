@@ -2,6 +2,21 @@ class ProductModel extends HTMLElement {
     constructor() {
         super();
         this.openModelModal();
+        this.addEventListener('click', this.loadContent);
+    }
+
+    loadContent(){
+
+        Shopify.loadFeatures(
+            [
+{
+
+    name:'model-viewer-ui',
+    version:'1.0'
+}
+
+            ]
+        )
     }
 
     getMediaID() {
